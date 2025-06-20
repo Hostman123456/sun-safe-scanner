@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sun Safe Scanner - Skin Lesion Analysis</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.3/dist/teachablemachine-image.min.js"></script>
+  
+  <div class="container">
+    <header class="header">
+      <h1 class="title">☀️ Sun Safe Scanner</h1>
+      <p class="subtitle">Google Teachable Machine based AI Cancer Screener</p>
+    </header>
+
+    <main class="main-content">
+      <div class="scanner-section">
+        <div class="image-display">
+          <div id="cancer-image" class="image-container">
+            <img src="images.jfif" alt="Skin lesion for analysis" class="analysis-image">
+          </div>
+          <button id="reset-btn" class="scan-button">🔍 Analyze Image</button>
+        </div>
+
+        <div class="results-section">
+          <div id='label-container' class="results-display"></div>
+        </div>
+      </div>
+
+      <div class="upload-options">
+        <div class="upload-method">
+          <h3>📁 Upload Image</h3>
+          <div id="upload-container" class="upload-zone">
+            <form>
+              <label for="imageUpload" class="upload-label">
+                <span class="upload-icon">📎</span>
+                Choose Image File
+              </label>
+              <input type="file" id="imageUpload" accept="image/*" class="file-input">
+            </form>
+          </div>
+        </div>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <div class="camera-method">
+          <h3>📷 Use Camera</h3>
+          <div id="photo-container" class="camera-container">
+            <button id="capture-btn" class="camera-button">📸 Capture Photo</button>
+            <video id="camera" autoplay class="camera-feed"></video>
+            <div class="camera-controls">
+              <button class="frontCamera camera-switch">📱 Front</button>
+              <button class="backCamera camera-switch">📷 Back</button>
+            </div>
+            <canvas id="photo" class="hidden"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <p><strong>⚠️ Disclaimer:</strong>This aplication was desinged by a 16 y/o teenager with no medical degree. Don't use this as an actual diagnosis</p>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
